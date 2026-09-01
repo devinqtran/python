@@ -43,3 +43,8 @@ print(set_a - set_b)          # Output: {1, 2}
 # Symmetric Difference
 print(set_a ^ set_b)          # Output: {1, 2, 4, 5}
 
+# Membership Testing (Performance)
+guests = {"Alice", "Bob", "Charlie"}
+
+if "Alice" in guests:
+    print("Alice is invited!")
