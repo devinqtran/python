@@ -74,3 +74,6 @@ print(idx)
 allNumbers = False
 allNumbers = "12345".isdigit()
 print(allNumbers)
+
+# STRING MANIPULATION C++ vs PYTHON
+# input.substr(1) = self.input = self.input[1:]
