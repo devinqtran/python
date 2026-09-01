@@ -38,9 +38,9 @@ print(multiply(4, 5))  # Outputs: 20
 # zip function good for looking at lists with corresponding indices
 students = ["Devin", "Max", "Mary", "Amelia"]
 grades = [100, 25, 90, 90]
-
+colors = ["blue", "red", "green", "orange"]
 # use zip to create pairs of student and grade
-for student, grade in zip(students, grades):
-    print(f"{student}: {grade}")
+for student, grade, color in zip(students, grades, colors):
+    print(f"{student}: {grade}: {color}")
 
 print(list(zip(students, grades)))
