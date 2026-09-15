@@ -17,6 +17,7 @@ print(re.findall(r'\d+', 'Item 42 and 99'))
 # re.finditer(pattern, string) returns an iterator yielding match objects for all matches
 # re.finditer(pattern, string)
 
+print("Check for a match at beginning of a string\n")
 # re.match checks for a match only at the beginning of a string
 print(re.match(r'\d+', 'Item 42 and 99'))
 

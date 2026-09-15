@@ -12,5 +12,18 @@ log_data = """
 [2026-09-15 12:14:59] ERROR: Authentication failed for 10.0.0.25
 """
 
+pattern = r'ERROR:.*?(\d+\.\d+\.\d\.\d+)'
 # write script that extracts only the IP addresses from the lines marked as ERROR
 print(re.findall(r'\d+\.\d+\.\d\.\d+', log_data))
+ips = re.findall(pattern, log_data)
+print(ips)
+
+records = "ItemID: 492-A, itemid: 583-B, ITEM_ID: 991-C, ItemID: 104-D"
+
+# standardize labels ID: number-letter
+# item matches the literal word
+# _? matches zero or one underscore (making it optional)
+# id matches the literal word
+pattern2 = r'item_?id'
+clean_records = re.sub(pattern2, 'ID', records, flags=re.IGNORECASE)
+print(clean_records)
