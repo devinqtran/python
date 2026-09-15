@@ -27,3 +27,24 @@ records = "ItemID: 492-A, itemid: 583-B, ITEM_ID: 991-C, ItemID: 104-D"
 pattern2 = r'item_?id'
 clean_records = re.sub(pattern2, 'ID', records, flags=re.IGNORECASE)
 print(clean_records)
+
+dimensions = "Excavation logged: 39x39x11 blocks cleared in sector A."
+pattern3 = r'(\d+)x(\d+)x(\d+)' # each dimension in grouping ()
+
+match = re.search(pattern3, dimensions)
+if match:
+    print("Full match (Group 0):", match.group(0))
+    print("Length (Group 1):", match.group(1))
+    print("Width (Group 2):", match.group(2))
+    print("Height (Group 3):", match.group(3))
+
+concat = match.group(1) + match.group(2)
+print(concat)
+
+# string to int then find volume
+length = int(match.group(1))
+width = int(match.group(2))
+height = int(match.group(3))
+
+volume = length * width * height
+print(f"Volume: {volume}")
